@@ -27,7 +27,7 @@ def create
   new_user.username = input_username
   new_user.save
 
-  redirect_to("/users")
+  redirect_to("/users/" + new_user.username)
   #render({ :template => "user_templates/temp.html.erb"})
 end
 
