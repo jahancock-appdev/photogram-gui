@@ -29,4 +29,21 @@ class PhotosController < ApplicationController
 
   end
 
+  def insert
+    the_image = params.fetch("input_image")
+    the_caption = params.fetch("input_caption")
+    the_user = params.fetch("input_user")
+    
+    new_image = Photo.new
+
+    new_image.image = the_image
+    new_image.caption = the_caption
+    new_image.owner_id = the_user.to_i
+    new_image.comments_count = 0
+    new_image.likes_count = 0
+
+    new_image.save
+
+    #render({ :template => "photos_templates/add_photo.html.erb"})
+  end
 end
