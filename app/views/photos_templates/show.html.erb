@@ -23,22 +23,22 @@
 
   <dt>Edit photo</dt>
   <dd>
-    <form action="">
+    <form action="/update_photo/<%= @the_photo.id %>">
       <label for="browser_image">
         Image
       </label>
-      <input id = "browser_image" name = "input_image" type="text" placeholder = "Enter a URL for the image...">
+      <input id = "browser_image" name = "query_image" type="text" placeholder = "Enter a URL for the image..." value="<%= @the_photo.image %>">
 
       <label for="browser_caption">
         Caption
       </label>
-      <textarea id = "browser_caption" name = "input_caption" type="text" placeholder = "Enter a caption for the photo..."></textarea>
+      <textarea id = "browser_caption" name = "query_caption" type="text" placeholder = "Enter a caption for the photo..."><%= @the_photo.caption %></textarea>
 
       <button>Update photo</button>
     </form>
   </dd>
   
-  <dt>Delte photo</dt>
+  <dt>Delete photo</dt>
   <dd>
     <a href="/delete_photo/<%= @the_photo.id %>">
       Delete this photo
