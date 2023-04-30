@@ -72,3 +72,15 @@
 
 
 <h3>Add a new comment</h3>
+<form action="/insert_comment">
+  <label for="browser_photo_id">Photo ID</label>
+  <input type="text" name="query_photo_id" id="browser_photo_id" value="<%= @the_photo.id %>">
+  
+  <label for="browser_author_id">Author ID</label>
+  <input type="text" name="query_author_id" id="browser_author_id">
+
+  <label for="browser_body">Comment</label>
+  <textarea type="text" name="query_body" id="browser_body" placeholder="Enter a comment..."></textarea>
+
+  <button>Add comment</button>
+</form>

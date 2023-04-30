@@ -12,7 +12,12 @@
     Edit user
   </dt>
   <dd>
-    form
+    <form action="/update_user/<%= @the_user.id %>">
+      <label for="browser_username">Username</label>
+      <input type="text" name="query_username" id="browser_username" value="<%= @the_user.username %>">
+
+      <button>Update user</button>
+    </form>
   </dd>
 </dl>
 

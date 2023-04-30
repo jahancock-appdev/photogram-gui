@@ -31,4 +31,17 @@ def create
   #render({ :template => "user_templates/temp.html.erb"})
 end
 
+def update
+  the_id = params.fetch("path_id")
+  
+  the_user = User.find_by({:id => the_id})
+  
+  input_username = params.fetch("query_username")
+  the_user.username = input_username
+ 
+  the_user.save
+
+  redirect_to("/users/" + input_username)
+end
+
 end
